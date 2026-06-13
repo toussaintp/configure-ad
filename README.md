@@ -7,10 +7,15 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Environments and Technologies Used</h2>
 
-- Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop
-- Active Directory Domain Services
+- Microsoft Azure
+- Windows Server 2025
+- Windows 10
+- Active Directory Domain Services (AD DS)
+- DNS
+- Remote Desktop Protocol (RDP)
+- Windows Event Viewer
 - PowerShell
+- Azure Virtual Network
 
 <h2>Operating Systems Used </h2>
 
@@ -19,13 +24,18 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
   <h2>Project Objectives</h2>
 
-- Create Azure Virtual Machines for a Domain Controller and Client Computer
-- Configure networking and DNS settings between virtual machines
+- Deploy a Windows Server 2022 Domain Controller in Microsoft Azure
+- Configure networking, DNS, and virtual machine connectivity
 - Install and configure Active Directory Domain Services (AD DS)
-- Promote a Windows Server to a Domain Controller
-- Join a Windows 10 client computer to the domain
-- Verify domain connectivity and authentication
-- Prepare the environment for user and group management
+- Create and manage an Active Directory domain environment
+- Join a Windows 10 client machine to the domain
+- Create and manage administrative and standard user accounts
+- Configure Organizational Units (OUs) for resource organization
+- Troubleshoot user authentication and account lockout issues
+- Enable and disable user accounts as part of identity management processes
+- Monitor system and security logs using Event Viewer
+- Validate domain authentication, DNS resolution, and client connectivity
+- Gain hands-on experience with enterprise identity and access management concepts
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
@@ -276,16 +286,26 @@ A fully functional on-premises Active Directory environment was successfully dep
 <h2>Skills Demonstrated</h2>
 
 - Microsoft Azure Virtual Machine Deployment
-- Virtual Network Configuration
-- Windows Server Administration
+- Azure Virtual Networking
+- Windows Server 2022 Administration
 - Active Directory Domain Services (AD DS)
-- Domain Controller Deployment
-- DNS Configuration and Troubleshooting
+- Domain Controller Installation and Configuration
 - Active Directory Forest and Domain Creation
-- Domain Join Operations
+- DNS Configuration and Troubleshooting
+- Active Directory Users and Computers (ADUC)
+- Organizational Unit (OU) Management
+- Domain User Account Administration
+- Domain Administrator Account Creation
+- User Lifecycle Management
+- Account Enablement and Disablement
+- Account Lockout Troubleshooting
+- Windows Event Viewer Log Analysis
+- Authentication and Authorization Management
+- Identity and Access Management (IAM) Fundamentals
 - Remote Desktop Administration
 - Network Connectivity Testing
-- Basic PowerShell Usage
-- Authentication and Identity Management Fundamentals
+- Windows Security Administration
+- Troubleshooting and Root Cause Analysis
+- PowerShell Fundamentals
 - IT Infrastructure Documentation
-- Troubleshooting Windows Networking Issues
+- Enterprise Environment Administration
