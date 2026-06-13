@@ -167,10 +167,110 @@ Verifying connectivity ensures that domain services, DNS resolution, and authent
 </p>
 <br />
 
+<p>
+Step 9: Install Active Directory
+</p>
+<p>
+<img width="779" height="561" alt="10 - AD installed" src="https://github.com/user-attachments/assets/6b73463b-d8c3-4ee6-a92a-531c6f75f306" />
+</p>
+
+<p>
+What was done:
+Installed the Active Directory Domain Services (AD DS) server role on the Windows Server virtual machine.
+  
+Why it matters:
+AD DS provides the framework for centralized identity management, enabling administrators to manage users, computers, groups, and security policies.
+</p>
+<br />
+
+<p>
+Step 10: Promote the Server to a Domain Controller
+</p>
+<p>
+<img width="776" height="799" alt="11 - Server to DC" src="https://github.com/user-attachments/assets/c3d3267c-4188-422c-9177-7f00bd19d43f" />
+</p>
+
+<p>
+What was done:
+Promoted the server to a Domain Controller and created a new Active Directory forest and domain.
+  
+Why it matters:
+This step establishes the foundation of the organization's identity infrastructure and allows devices and users to authenticate against a centralized directory
+</p>
+<br />
+
+<p>
+Step 11: Create Organizational Units (OUs) AND Create a domain Admin user (jane) within the domain (mydomain.com)
+</p>
+<p>
+<img width="759" height="535" alt="12 - jane admin" src="https://github.com/user-attachments/assets/1189fece-b860-4b50-bd3c-6fda3205970b" />
+</p>
+
+<p>
+What was done:
+Created Organizational Units within Active Directory to logically organize users, computers, and administrative resources. Created a new user account within Active Directory and assigned it to the Domain Admins security group, granting the account administrative privileges across the domain.
+
+Why it matters:
+OUs simplify management and allow administrators to apply permissions and Group Policies to specific groups of users or devices. Domain Administrator accounts are used to manage Active Directory resources such as users, computers, groups, and organizational units. Creating a dedicated administrative account follows best practices by separating administrative tasks from the default built-in administrator account and provides secure, centralized management of the domain environment.
+</p>
+<br />
+
+<p>
+Step 12: Join Client-1 to the Domain
+</p>
+<p>
+<img width="745" height="522" alt="13 - client 1 join domain" src="https://github.com/user-attachments/assets/db07d21c-d6cd-4c53-9414-cd7a143134c6" />
+</p>
+
+<p>
+What was done:
+Added the Windows 10 client computer to the Active Directory domain and restarted the system.
+  
+Why it matters:
+Joining the domain enables centralized management of the workstation, including authentication, security policies, and administrative controls.
+</p>
+<br />
+
+<p>
+Step 13: Set up remote desktop for non-administrative users on Client-1
+</p>
+<p>
+<img width="459" height="668" alt="14 - rdp access" src="https://github.com/user-attachments/assets/6c6d8199-1ad7-4e98-b980-628bc34ad1df" />
+</p>
+
+<p>
+What was done:
+Configured the client machine to allow Remote Desktop access for authorized domain users.
+
+Why it matters:
+Remote administration is a common requirement in enterprise environments and allows IT staff to support systems efficiently.
+</p>
+<br />
+
+<p>
+Step 14: Generate 1000 Users with PowerShell and attempt to log into Client-1 with one of the users
+</p>
+<p>
+<img width="789" height="851" alt="15 - 1000 users" src="https://github.com/user-attachments/assets/1fabc082-213d-4476-974e-478d84fa6efc" />
+</p>
+<p>
+<img width="804" height="645" alt="16 - baru decu" src="https://github.com/user-attachments/assets/a6981f8e-3771-45d1-885c-a60697bae560" />
+</p>
+
+<p>
+What was done:
+Used a PowerShell script to automatically create multiple Active Directory user accounts.
+  
+Why it matters:
+Automation reduces administrative effort, minimizes errors, and demonstrates practical scripting skills used by system administrators.
+</p>
+<br />
+
+
 <h2>Final Result</h2>
 
 <p>
-A fully functional on-premises Active Directory environment was successfully deployed within Microsoft Azure. A Windows Server 2025 virtual machine was configured as a Domain Controller, Active Directory Domain Services were installed, and a Windows 10 client machine was successfully joined to the domain. 
+A fully functional on-premises Active Directory environment was successfully deployed within Microsoft Azure. A Windows Server 2025 virtual machine was configured as a Domain Controller, Active Directory Domain Services were installed, and a Windows 10 client machine was successfully joined to the domain. DNS resolution, domain authentication, and network connectivity were verified, creating a foundation for future user, group, and policy administration tasks.
 </p>
 
 <h2>Skills Demonstrated</h2>
@@ -181,3 +281,11 @@ A fully functional on-premises Active Directory environment was successfully dep
 - Active Directory Domain Services (AD DS)
 - Domain Controller Deployment
 - DNS Configuration and Troubleshooting
+- Active Directory Forest and Domain Creation
+- Domain Join Operations
+- Remote Desktop Administration
+- Network Connectivity Testing
+- Basic PowerShell Usage
+- Authentication and Identity Management Fundamentals
+- IT Infrastructure Documentation
+- Troubleshooting Windows Networking Issues
