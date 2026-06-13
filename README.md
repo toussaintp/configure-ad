@@ -276,11 +276,68 @@ Automation reduces administrative effort, minimizes errors, and demonstrates pra
 </p>
 <br />
 
+<p>
+Step 15: Generate 1000 Users with PowerShell and attempt to log into Client-1 with one of the users
+</p>
+<p>
+<img width="789" height="851" alt="15 - 1000 users" src="https://github.com/user-attachments/assets/1fabc082-213d-4476-974e-478d84fa6efc" />
+</p>
+<p>
+<img width="804" height="645" alt="16 - baru decu" src="https://github.com/user-attachments/assets/a6981f8e-3771-45d1-885c-a60697bae560" />
+</p>
+
+<p>
+What was done:
+Simulated an account lockout by entering incorrect login credentials multiple times, then used Active Directory administrative tools to identify the locked account, unlock it, and restore user access.
+  
+Why it matters:
+Account lockouts are a common Help Desk and System Administration issue. Understanding how to identify, troubleshoot, and resolve locked accounts helps maintain user productivity while enforcing security policies that protect against unauthorized access attempts.
+</p>
+<br />
+
+<p>
+Step 16: Enabling and Disabling User Accounts
+</p>
+<p>
+<img width="789" height="851" alt="15 - 1000 users" src="https://github.com/user-attachments/assets/1fabc082-213d-4476-974e-478d84fa6efc" />
+</p>
+<p>
+<img width="804" height="645" alt="16 - baru decu" src="https://github.com/user-attachments/assets/a6981f8e-3771-45d1-885c-a60697bae560" />
+</p>
+
+<p>
+What was done:
+Used Active Directory Users and Computers (ADUC) to disable and re-enable user accounts within the domain. This involved modifying account status settings to control whether users could log in and access network resources.
+  
+Why it matters:
+Disabling accounts is a common security and administrative practice used when employees leave an organization, take extended leave, or when suspicious account activity is detected. Re-enabling accounts restores access when appropriate while maintaining centralized control over user authentication and permissions.
+</p>
+<br />
+
+<p>
+Step 17:Observing Logs
+</p>
+<p>
+<img width="789" height="851" alt="15 - 1000 users" src="https://github.com/user-attachments/assets/1fabc082-213d-4476-974e-478d84fa6efc" />
+</p>
+<p>
+<img width="804" height="645" alt="16 - baru decu" src="https://github.com/user-attachments/assets/a6981f8e-3771-45d1-885c-a60697bae560" />
+</p>
+
+<p>
+What was done:
+Reviewed system and security logs using Windows Event Viewer to monitor authentication events, account activity, and system-generated messages within the Active Directory environment.
+  
+Why it matters:
+Automation reduces administrative effort, minimizes errors, and demonstrates practical scripting skills used by system administrators.
+</p>
+<br />
+
 
 <h2>Final Result</h2>
 
 <p>
-A fully functional on-premises Active Directory environment was successfully deployed within Microsoft Azure. A Windows Server 2025 virtual machine was configured as a Domain Controller, Active Directory Domain Services were installed, and a Windows 10 client machine was successfully joined to the domain. DNS resolution, domain authentication, and network connectivity were verified, creating a foundation for future user, group, and policy administration tasks.
+Logs provide valuable information about user logins, account lockouts, system errors, and security events. Monitoring logs helps administrators troubleshoot issues, investigate security incidents, and verify that Active Directory services are operating correctly.
 </p>
 
 <h2>Skills Demonstrated</h2>
