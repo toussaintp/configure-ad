@@ -57,10 +57,11 @@ Step 1: Create Azure Resource Group and Virtual Network
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 Created a Resource Group and Virtual Network in Azure to host all resources required for the Active Directory environment.
   
-Why it matters:
+- Why it matters:
 The Virtual Network provides secure communication between virtual machines, while the Resource Group helps organize and manage cloud resources efficiently.
 </p>
 <br />
@@ -73,10 +74,11 @@ Step 2: Create the Domain Controller VM (DC-1)
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 Deployed a Windows Server 2022 virtual machine and configured a static private IP address to serve as the Domain Controller.
 
-Why it matters:
+- Why it matters:
 A Domain Controller provides centralized authentication, authorization, and directory services. A static IP address ensures clients can consistently locate domain and DNS services.
 </p>
 <br />
@@ -89,10 +91,10 @@ Step 3: Create the Client VM (Client-1)
 </p>
 <p>
   
-What was done:
+- What was done:
 Deployed a Windows 10 virtual machine within the same Virtual Network as the Domain Controller.
 
-Why it matters:
+- Why it matters:
 This machine simulates a workstation in a corporate environment and will later be joined to the Active Directory domain for centralized management.
 </p>
 <br />
@@ -105,10 +107,11 @@ Step 4: Set DC-1 NIC Private address to be static
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 The Network Interface Card (NIC) of the Domain Controller (DC-1) was configured with a static private IP address within Azure. This ensures that the server always uses the same internal network address.
 
-Why it matters:
+- Why it matters:
 Domain Controllers provide critical services such as Active Directory and DNS. If the server's IP address changes, client computers may be unable to locate the Domain Controller, causing authentication, DNS resolution, and domain-related services to fail. Assigning a static IP address ensures reliable communication and consistent access to network services throughout the environment.
 </p>
 <br />
@@ -121,10 +124,11 @@ Step 5: Disable DC-1  windows Firewall
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 Logged into the Domain Controller (DC-1) and temporarily disabled the Windows Defender Firewall on all network profiles (Domain, Private, and Public) to test network communication between virtual machines.
 
-Why it matters:
+- Why it matters:
 Disabling the firewall during initial setup helps determine whether connectivity issues are being caused by firewall rules or by network configuration problems. This allows administrators to verify that Client-1 can successfully communicate with DC-1 before implementing more restrictive security settings. In a production environment, the firewall would typically remain enabled with properly configured rules rather than being permanently disabled.
 </p>
 <br />
@@ -137,10 +141,11 @@ Step 6: Configure DNS Settings
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 Configured the client machine to use the Domain Controller's private IP address as its primary DNS server.
   
-Why it matters:
+- Why it matters:
 Active Directory relies heavily on DNS to locate domain resources and services. Without proper DNS configuration, domain joins and authentication will fail.
 </p>
 <br />
@@ -153,10 +158,11 @@ Step 7: Restart Client-1
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 Restarted the Client-1 virtual machine through the Azure Portal after completing network and Domain Controller configuration changes.
   
-Why it matters:
+- Why it matters:
 Restarting the client ensures that any recent network configuration changes, such as DNS settings or connectivity updates, are fully applied. This helps guarantee that the client machine can properly communicate with the Domain Controller and accurately recognize Active Directory services before proceeding with domain-related tasks.
 </p>
 <br />
@@ -169,10 +175,11 @@ Step 8: Verify Network Connectivity
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 Used Remote Desktop and network testing tools to confirm communication between the client and server machines.
 
-Why it matters:
+- Why it matters:
 Verifying connectivity ensures that domain services, DNS resolution, and authentication requests can successfully travel across the network.
 </p>
 <br />
@@ -185,10 +192,11 @@ Step 9: Install Active Directory
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 Installed the Active Directory Domain Services (AD DS) server role on the Windows Server virtual machine.
   
-Why it matters:
+- Why it matters:
 AD DS provides the framework for centralized identity management, enabling administrators to manage users, computers, groups, and security policies.
 </p>
 <br />
@@ -201,10 +209,11 @@ Step 10: Promote the Server to a Domain Controller
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 Promoted the server to a Domain Controller and created a new Active Directory forest and domain.
   
-Why it matters:
+- Why it matters:
 This step establishes the foundation of the organization's identity infrastructure and allows devices and users to authenticate against a centralized directory
 </p>
 <br />
@@ -217,10 +226,11 @@ Step 11: Create Organizational Units (OUs) AND Create a domain Admin user (jane)
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 Created Organizational Units within Active Directory to logically organize users, computers, and administrative resources. Created a new user account within Active Directory and assigned it to the Domain Admins security group, granting the account administrative privileges across the domain.
 
-Why it matters:
+- Why it matters:
 OUs simplify management and allow administrators to apply permissions and Group Policies to specific groups of users or devices. Domain Administrator accounts are used to manage Active Directory resources such as users, computers, groups, and organizational units. Creating a dedicated administrative account follows best practices by separating administrative tasks from the default built-in administrator account and provides secure, centralized management of the domain environment.
 </p>
 <br />
@@ -233,10 +243,11 @@ Step 12: Join Client-1 to the Domain
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 Added the Windows 10 client computer to the Active Directory domain and restarted the system.
   
-Why it matters:
+- Why it matters:
 Joining the domain enables centralized management of the workstation, including authentication, security policies, and administrative controls.
 </p>
 <br />
@@ -249,10 +260,11 @@ Step 13: Set up remote desktop for non-administrative users on Client-1
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 Configured the client machine to allow Remote Desktop access for authorized domain users.
 
-Why it matters:
+- Why it matters:
 Remote administration is a common requirement in enterprise environments and allows IT staff to support systems efficiently.
 </p>
 <br />
@@ -268,29 +280,40 @@ Step 14: Generate 1000 Users with PowerShell and attempt to log into Client-1 wi
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 Used a PowerShell script to automatically create multiple Active Directory user accounts.
   
-Why it matters:
+- Why it matters:
 Automation reduces administrative effort, minimizes errors, and demonstrates practical scripting skills used by system administrators.
 </p>
 <br />
 
 <p>
-Step 15: Generate 1000 Users with PowerShell and attempt to log into Client-1 with one of the users
-</p>
+Step 15: Dealing with accounts lockouts
+
+- Set account lockout policy in Active directory 
 <p>
-<img width="789" height="851" alt="15 - 1000 users" src="https://github.com/user-attachments/assets/1fabc082-213d-4476-974e-478d84fa6efc" />
-</p>
-<p>
-<img width="804" height="645" alt="16 - baru decu" src="https://github.com/user-attachments/assets/a6981f8e-3771-45d1-885c-a60697bae560" />
+<img width="926" height="735" alt="17 - set account lock out policy     " src="https://github.com/user-attachments/assets/a2a4997e-cb23-42ed-b3fa-5cd68df95db2" />
 </p>
 
+- Lock user account out (baru.decu)
 <p>
-What was done:
+<img width="580" height="527" alt="18 - log in failure" src="https://github.com/user-attachments/assets/0b887307-b170-4632-a77a-7cd111e73123" />
+</p>
+
+- Unlock user account (baru.decu)
+
+<p>
+<img width="637" height="660" alt="19 - unlock account baru decu" src="https://github.com/user-attachments/assets/4c59bab0-d6ad-413d-9da2-5974b295cee2" />
+</p>
+  
+<p>
+  
+- What was done:
 Simulated an account lockout by entering incorrect login credentials multiple times, then used Active Directory administrative tools to identify the locked account, unlock it, and restore user access.
   
-Why it matters:
+- Why it matters:
 Account lockouts are a common Help Desk and System Administration issue. Understanding how to identify, troubleshoot, and resolve locked accounts helps maintain user productivity while enforcing security policies that protect against unauthorized access attempts.
 </p>
 <br />
@@ -299,17 +322,18 @@ Account lockouts are a common Help Desk and System Administration issue. Underst
 Step 16: Enabling and Disabling User Accounts
 </p>
 <p>
-<img width="789" height="851" alt="15 - 1000 users" src="https://github.com/user-attachments/assets/1fabc082-213d-4476-974e-478d84fa6efc" />
+<img width="626" height="621" alt="20 - disable account" src="https://github.com/user-attachments/assets/9c5e9b30-f4bf-4e51-88f2-4a91ca9ac20a" />
 </p>
 <p>
-<img width="804" height="645" alt="16 - baru decu" src="https://github.com/user-attachments/assets/a6981f8e-3771-45d1-885c-a60697bae560" />
+<img width="632" height="537" alt="21 - acct disabled" src="https://github.com/user-attachments/assets/3c45ff1c-7957-42fd-9a05-b306aeb9684d" />
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 Used Active Directory Users and Computers (ADUC) to disable and re-enable user accounts within the domain. This involved modifying account status settings to control whether users could log in and access network resources.
   
-Why it matters:
+- Why it matters:
 Disabling accounts is a common security and administrative practice used when employees leave an organization, take extended leave, or when suspicious account activity is detected. Re-enabling accounts restores access when appropriate while maintaining centralized control over user authentication and permissions.
 </p>
 <br />
@@ -318,18 +342,16 @@ Disabling accounts is a common security and administrative practice used when em
 Step 17:Observing Logs
 </p>
 <p>
-<img width="789" height="851" alt="15 - 1000 users" src="https://github.com/user-attachments/assets/1fabc082-213d-4476-974e-478d84fa6efc" />
-</p>
-<p>
-<img width="804" height="645" alt="16 - baru decu" src="https://github.com/user-attachments/assets/a6981f8e-3771-45d1-885c-a60697bae560" />
+<img width="770" height="673" alt="22 - security logs" src="https://github.com/user-attachments/assets/5d420ccd-7178-4889-9018-0c6a8628a2e1" />
 </p>
 
 <p>
-What was done:
+  
+- What was done:
 Reviewed system and security logs using Windows Event Viewer to monitor authentication events, account activity, and system-generated messages within the Active Directory environment.
   
-Why it matters:
-Automation reduces administrative effort, minimizes errors, and demonstrates practical scripting skills used by system administrators.
+- Why it matters:
+Logs provide valuable information about user logins, account lockouts, system errors, and security events. Monitoring logs helps administrators troubleshoot issues, investigate security incidents, and verify that Active Directory services are operating correctly.
 </p>
 <br />
 
@@ -337,14 +359,23 @@ Automation reduces administrative effort, minimizes errors, and demonstrates pra
 <h2>Final Result</h2>
 
 <p>
-Logs provide valuable information about user logins, account lockouts, system errors, and security events. Monitoring logs helps administrators troubleshoot issues, investigate security incidents, and verify that Active Directory services are operating correctly.
+- Successfully deployed an on-premises Active Directory environment within Microsoft Azure by creating a Windows Server 2022 Domain Controller and a Windows 10 client workstation. Active Directory Domain Services (AD DS) and DNS were configured to provide centralized authentication, user management, and name resolution services across the environment.
 </p>
+
+<p>
+- The client computer was successfully joined to the domain, allowing users to authenticate using domain credentials. Administrative tasks such as creating a Domain Administrator account, managing user accounts, enabling and disabling accounts, troubleshooting account lockouts, and reviewing security and system logs were completed to simulate real-world IT support and system administration responsibilities.
+</p>
+
+<p>
+- The completed environment demonstrates foundational skills in cloud infrastructure deployment, Windows Server administration, Active Directory management, DNS configuration, user lifecycle management, authentication troubleshooting, and enterprise identity and access management.
+</p>
+
 
 <h2>Skills Demonstrated</h2>
 
 - Microsoft Azure Virtual Machine Deployment
 - Azure Virtual Networking
-- Windows Server 2022 Administration
+- Windows Server 2025 Administration
 - Active Directory Domain Services (AD DS)
 - Domain Controller Installation and Configuration
 - Active Directory Forest and Domain Creation
